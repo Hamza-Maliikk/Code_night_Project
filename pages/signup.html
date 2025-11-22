@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    <link rel="stylesheet" href="../css/auth.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+      
+<form>
+    <div class="grid gap-6 mb-6 md:grid-cols-2">
+        <div>
+            <label for="name" class="block mb-2.5 text-sm font-medium text-heading">First name</label>
+            <input type="text" id="name" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="Enter name" required />
+        </div>
+    </div>
+    <div class="mb-6">
+        <label for="email" class="block mb-2.5 text-sm font-medium text-heading">Email address</label>
+        <input type="email" id="email" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="Enter email" required />
+    </div> 
+    <div class="mb-6">
+        <label for="password" class="block mb-2.5 text-sm font-medium text-heading">Password</label>
+        <input type="password" id="password" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="Enter Password" required />
+    </div> 
+   
+    <div class="flex items-start mb-6">
+        <div class="flex items-center h-5">
+        </div>
+    </div>
+    <button type="submit" id="submit_btn" class="text-blue-600 bg-blue box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">Submit</button>
+</form>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+    <script src="../js/signup.js"></script>
+  </body>
+</html>
