@@ -5,16 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What happen</title>
 
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
-<body>
-    <h2>Create New Post</h2>
+<body class="bg-gray-900 text-white p-6">
 
-<form id="postForm">
-  <input type="text" id="postName" placeholder="Enter post title" required />
-  <input type="text" id="postImage" placeholder="Enter image URL" required />
-  <button type="submit">Create Post</button>
-</form>
+    <h2 class="text-2xl font-bold mb-4">Create New Post</h2>
 
-<script src="../js/createpost.js"></script>
+    <form id="postForm" class="flex flex-col gap-3 max-w-sm">
+
+        <!-- INPUT 1 -->
+        <input 
+            type="text" 
+            id="postName" 
+            placeholder="Enter post title" 
+            required
+            class="p-3 rounded bg-gray-800 border border-gray-700 
+                   transition-all duration-300 
+                   focus:border-purple-500 focus:bg-gray-700 focus:ring-2 focus:ring-purple-600"
+        />
+
+        <!-- INPUT 2 -->
+        <input 
+            type="text" 
+            id="postImage" 
+            placeholder="Enter image URL" 
+            required
+            class="p-3 rounded bg-gray-800 border border-gray-700 
+                   transition-all duration-300 
+                   focus:border-purple-500 focus:bg-gray-700 focus:ring-2 focus:ring-purple-600"
+        />
+
+        <!-- BUTTON -->
+        <button 
+            type="submit"
+            class="p-3 bg-purple-600 hover:bg-purple-700 rounded font-semibold 
+                   transition-all duration-300 
+                   hover:scale-105 hover:shadow-lg"
+        >
+            Create Post
+        </button>
+    </form>
+
+    <script src="../js/createpost.js"></script>
 </body>
 </html>

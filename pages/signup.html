@@ -1,44 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration</title>
-    <link rel="stylesheet" href="../css/auth.css">
-    <link
-      href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
 
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  </head>
-  <body>
-      
-<form>
-    <div class="grid gap-6 mb-6 md:grid-cols-2">
-        <div>
-            <label for="name" class="block mb-2.5 text-sm font-medium text-heading">First name</label>
-            <input type="text" id="name" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="Enter name" required />
-        </div>
-    </div>
-    <div class="mb-6">
-        <label for="email" class="block mb-2.5 text-sm font-medium text-heading">Email address</label>
-        <input type="email" id="email" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="Enter email" required />
-    </div> 
-    <div class="mb-6">
-        <label for="password" class="block mb-2.5 text-sm font-medium text-heading">Password</label>
-        <input type="password" id="password" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="Enter Password" required />
-    </div> 
-   
-    <div class="flex items-start mb-6">
-        <div class="flex items-center h-5">
-        </div>
-    </div>
-    <button type="submit" id="submit_btn" class="text-blue-600 bg-blue box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">Submit</button>
-</form>
+<body class="min-h-screen bg-[#0e0e12] flex items-center justify-center p-4">
 
+  <div class="bg-[#1a1a21]/90 backdrop-blur-xl shadow-2xl border border-purple-700/20 rounded-2xl w-full max-w-md p-8 text-white">
+    
+    <h1 class="text-3xl font-bold text-center mb-6 
+      bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
+      Create Account
+    </h1>
 
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
-    <script src="../js/signup.js"></script>
-  </body>
+    <form>
+      <!-- Full Name -->
+      <div class="mb-4">
+        <label class="block mb-2 text-sm font-medium text-gray-300" for="name">
+          Full Name
+        </label>
+        <input
+          id="name"
+          type="text"
+          placeholder="Enter your name"
+          class="w-full px-4 py-3 rounded-lg bg-[#13131a] border border-gray-700 
+          focus:border-purple-600 focus:ring-2 focus:ring-purple-600 transition-all outline-none"
+          required
+        />
+      </div>
+
+      <!-- Email -->
+      <div class="mb-4">
+        <label class="block mb-2 text-sm font-medium text-gray-300" for="email">
+          Email Address
+        </label>
+        <input
+          id="email"
+          type="email"
+          placeholder="Enter your email"
+          class="w-full px-4 py-3 rounded-lg bg-[#13131a] border border-gray-700
+          focus:border-purple-600 focus:ring-2 focus:ring-purple-600 transition-all outline-none"
+          required
+        />
+      </div>
+
+      <!-- Password -->
+      <div class="mb-6">
+        <label class="block mb-2 text-sm font-medium text-gray-300" for="password">
+          Password
+        </label>
+        <input
+          id="password"
+          type="password"
+          placeholder="Enter password"
+          class="w-full px-4 py-3 rounded-lg bg-[#13131a] border border-gray-700
+          focus:border-purple-600 focus:ring-2 focus:ring-purple-600 transition-all outline-none"
+          required
+        />
+      </div>
+
+      <!-- Submit -->
+      <button
+        id="submit_btn"
+        type="submit"
+        class="w-full py-3 rounded-lg font-semibold text-white 
+        bg-gradient-to-r from-purple-600 to-purple-700 
+        shadow-lg shadow-purple-900/30
+        hover:shadow-purple-700/50 hover:scale-[1.02] duration-200 ease-in
+        active:scale-95 transition-all"
+      >
+        Register
+      </button>
+    </form>
+
+    <p class="text-center text-gray-400 text-sm mt-5">
+      Already have an account?
+      <a href="./login.html" class="text-purple-400 hover:underline">
+        Login
+      </a>
+    </p>
+
+  </div>
+
+  <script src="../js/signup.js"></script>
+</body>
 </html>

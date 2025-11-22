@@ -30,11 +30,18 @@ submitBtn.addEventListener('click', (e)=>{
         password
     }
 
+
     localStorage.setItem('user',JSON.stringify(userData))
+    Swal.fire({
+  title: "Good job!",
+  text: "You have successfully Signup",
+  icon: "success"
+}).then(()=>{
     window.location.href = '../pages/login.html'
-})
+});
+    
+});
 
 
-// For Login Form
 
  

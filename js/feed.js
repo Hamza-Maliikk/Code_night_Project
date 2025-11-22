@@ -34,24 +34,50 @@ function renderPosts(posts) {
     return;
   }
 
-  posts.forEach((post) => {
-    const liked = post.likedByCurrentUser ? "❤️" : "🤍";
+posts.forEach((post) => {
+  const liked = post.likedByCurrentUser ? "❤️" : "🤍";
 
-    container.innerHTML += `
-      <div class="postCard">
-        <h3>${post.title}</h3>
-        <img src="${post.image}" alt="" />
-        <p>Posted by <b>${post.author}</b> at <em>${post.time}</em></p>
+  container.innerHTML += `
+    <div class="p-5 rounded-2xl bg-gray-800 border border-gray-700 shadow-[0_0_20px_rgba(109,40,217,0.15)] hover:shadow-[0_0_35px_rgba(139,92,246,0.4)] transition-all duration-300 hover:-translate-y-1">
 
-        <div>
-          <span onclick="toggleLike(${post.id})" style="cursor:pointer;">${liked}</span>
-          ${post.likes} Likes
-          <button onclick="editPost(${post.id})">Edit</button>
-          <button onclick="deletePost(${post.id})">Delete</button>
+      <h3 class="text-xl font-semibold text-white mb-3">${post.title}</h3>
+
+      ${post.image 
+        ? `<img src="${post.image}" class="w-full rounded-xl mb-3 shadow-md" />`
+        : ''}
+
+      <p class="text-gray-400 mb-4">
+        Posted by <b class="text-purple-400">${post.author}</b> • 
+        <em class="text-gray-500">${post.time}</em>
+      </p>
+
+      <div class="flex items-center justify-between mt-3">
+
+        <div class="flex items-center gap-3">
+          <span onclick="toggleLike(${post.id})" 
+                class="cursor-pointer text-2xl hover:scale-110 transition">
+              ${liked}
+          </span>
+          <span class="text-gray-300">${post.likes} Likes</span>
         </div>
+
+        <div class="flex items-center gap-2">
+          <button onclick="editPost(${post.id})"
+            class="px-4 py-2 rounded-lg text-sm bg-purple-600 hover:bg-purple-700 transition">
+            Edit
+          </button>
+
+          <button onclick="deletePost(${post.id})"
+            class="px-4 py-2 rounded-lg text-sm bg-red-600 hover:bg-red-700 transition">
+            Delete
+          </button>
+        </div>
+
       </div>
-    `;
-  });
+
+    </div>
+  `;
+});
 }
 
 // 6️⃣ Like
