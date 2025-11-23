@@ -9,8 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const image = document.getElementById("postImage").value.trim();
 
     if (!title || !image) {
-      alert("Please fill all fields!");
-      return;
+      Swal.fire({
+        icon: "error",
+        text: "All fields required"});
+        return;
     }
 
     // Get logged-in user session
@@ -42,8 +44,13 @@ const newPost = {
     posts.push(newPost);
     localStorage.setItem("posts", JSON.stringify(posts));
 
-    alert("Post created successfully!");
-    window.location.href = "../pages/feed.html"; // redirect to feed
+    Swal.fire({
+  title: "Good job!",
+  text: "Post successfully uploaded",
+  icon: "success"
+}).then(()=>{
+window.location.href = "../pages/feed.html";
+})
   });
 
 });

@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Create Account</title>
+  <link rel="stylesheet" href="../css/auth.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
@@ -21,7 +22,7 @@
       <!-- Full Name -->
       <div class="mb-4">
         <label class="block mb-2 text-sm font-medium text-gray-300" for="name">
-          Full Name
+          Full Name:
         </label>
         <input
           id="name"
@@ -31,12 +32,13 @@
           focus:border-purple-600 focus:ring-2 focus:ring-purple-600 transition-all outline-none"
           required
         />
+        <p id="full_name"></p>
       </div>
 
       <!-- Email -->
       <div class="mb-4">
         <label class="block mb-2 text-sm font-medium text-gray-300" for="email">
-          Email Address
+          Email Address:
         </label>
         <input
           id="email"
@@ -46,12 +48,13 @@
           focus:border-purple-600 focus:ring-2 focus:ring-purple-600 transition-all outline-none"
           required
         />
+        <p id="full_email"></p>
       </div>
 
       <!-- Password -->
       <div class="mb-6">
         <label class="block mb-2 text-sm font-medium text-gray-300" for="password">
-          Password
+          Password:
         </label>
         <input
           id="password"
@@ -61,6 +64,7 @@
           focus:border-purple-600 focus:ring-2 focus:ring-purple-600 transition-all outline-none"
           required
         />
+        <p id="full_password"></p>
       </div>
 
       <!-- Submit -->

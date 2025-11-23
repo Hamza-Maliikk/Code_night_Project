@@ -10,16 +10,22 @@ submitBtn.addEventListener('click', (e)=>{
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
+    const fullName = document.getElementById('full_name')
+    const fullEmail = document.getElementById('full_email')
+    const fullPassword = document.getElementById('full_password')
+
     if(!name || !email || !password){
-        alert('All fields required')
+        Swal.fire({
+        icon: "error",
+        text: "All fields required"});
         return
     }
     if(!emailRegex.test(email)){
-        alert("Enter valid email")
+        fullEmail.innerText = `Enter valid email`
         return 
     }
     if(!passwordRegex.test(password) || password.length < 8 ){
-        alert('Enter valid password')
+        fullPassword.innerText = `Enter valid password`
         return  
     }
 

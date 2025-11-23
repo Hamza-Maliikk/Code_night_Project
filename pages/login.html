@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="../css/auth.css">
 </head>
 
 <body class="min-h-screen bg-[#0e0e12] flex items-center justify-center p-4">
@@ -30,6 +32,7 @@
           focus:border-purple-600 focus:ring-2 focus:ring-purple-600 transition-all outline-none"
           required
         />
+        <p id="login_email"></p>
       </div>
 
       <!-- Password -->
@@ -45,6 +48,7 @@
           focus:border-purple-600 focus:ring-2 focus:ring-purple-600 transition-all outline-none"
           required
         />
+        <p id="login_password"></p>
       </div>
 
       <!-- Login -->
@@ -54,7 +58,7 @@
         class="w-full py-3 rounded-lg font-semibold text-white 
         bg-gradient-to-r from-purple-600 to-purple-700 
         shadow-lg shadow-purple-900/30
-        hover:shadow-purple-700/50 hover:scale-[1.02]
+        hover:shadow-purple-700/50 hover:scale-[1.02]  duration-200 ease-in
         active:scale-95 transition-all"
       >
         Login

@@ -2,7 +2,7 @@
 const welcome = document.getElementById("Welcome");
 const user = JSON.parse(localStorage.getItem("user"));
 if (!user) window.location.href = "../pages/signup.html";
-else welcome.innerHTML = `WELCOME <span>${user.name}</span>`;
+else welcome.innerHTML = `Welcome <br> <span class="leading-[3rem] m-12 bg-gradient-to-r  from-purple-500 to-pink-500 text-transparent bg-clip-text md:text-[40px] ">${user.name}</span>`;
 
 // 2️⃣ Logout
 document.getElementById("log_out").addEventListener("click", () => {

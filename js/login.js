@@ -8,8 +8,13 @@ LoginBtn.addEventListener('click', (e)=>{
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
 
+    const loginEmail = document.getElementById('login_email')
+    const loginPassword  = document.getElementById('login_password')
+
     if(!email || !password){
-        alert('Enter Both fields')
+         Swal.fire({
+        icon: "error",
+        text: "All fields required"});
         return
     }
     // check data in Local storage
@@ -25,13 +30,13 @@ LoginBtn.addEventListener('click', (e)=>{
 
   // Email check
   if (localEmail !== email) {
-    alert("Enter valid email");
+    loginEmail.innerText = `Enter valid email`
     return;
   }
 
   // Password check
   if (localPassword !== password) {
-    alert("Enter valid password");
+    loginPassword.innerText = `Enter valid password`;
     return;
   }
 
