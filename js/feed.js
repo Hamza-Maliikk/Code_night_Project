@@ -2,8 +2,8 @@
 const welcome = document.getElementById("Welcome");
 const user = JSON.parse(localStorage.getItem("user"));
 if (!user) window.location.href = "../pages/signup.html";
-else welcome.innerHTML = `Welcome <br> <span class="leading-[3rem] m-12 bg-gradient-to-r  from-purple-500 to-pink-500 text-transparent bg-clip-text md:text-[40px] ">${user.name}</span>`;
-
+else welcome.innerHTML = `Welcome <br> 
+<span class="inline-block mt-4 leading-[3rem] bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text md:text-[40px]">${user.name}</span>`;
 // 2️⃣ Logout
 document.getElementById("log_out").addEventListener("click", () => {
   localStorage.removeItem("user");
@@ -139,11 +139,19 @@ function applyFilters() {
   }
 
   // Sort
-  const sortValue = document.getElementById("sortSelect").value;
-  if (sortValue === "latest") result.sort((a, b) => b.createdAt - a.createdAt);
-  if (sortValue === "oldest") result.sort((a, b) => a.createdAt - b.createdAt);
-  if (sortValue === "mostLiked") result.sort((a, b) => b.likes - a.likes);
+const getDateValue = (val) => {
+  return typeof val === "string" ? new Date(val).getTime() : val;
+};
 
-  filteredPosts = result;
-  renderPosts(result);
+const sortValue = document.getElementById("sortSelect").value;
+
+if (sortValue === "latest") {
+  result.sort((a, b) => getDateValue(b.createdAt) - getDateValue(a.createdAt));
 }
+
+if (sortValue === "oldest") {
+  result.sort((a, b) => getDateValue(a.createdAt) - getDateValue(b.createdAt));
+}
+filteredPosts = result;
+renderPosts(result);
+};
